@@ -1,0 +1,81 @@
+#matrixCanvas {
+    position: fixed; /* Fixa o canvas na tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Garante que cubra toda a largura */
+    height: 100%; /* Garante que cubra toda a altura */
+    z-index: -1; /* Coloca o canvas bem no fundo */
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente para ver o canvas */
+    margin: 0;
+    position: relative; /* Adiciona position para criar um contexto de empilhamento */
+    z-index: 0; /* Define um z-index para o body */
+}
+
+.container {
+    background-color: #111; /* Um fundo escuro para o container */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Sombra verde */
+    text-align: center;
+    color: #0f0; /* Garante que o texto dentro do container seja verde */
+    position: relative; /* Garante que o container fique acima do canvas */
+    z-index: 10; /* Coloca o container acima do canvas e do body */
+}
+
+h1 {
+    color: #0f0; /* Título verde */
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #0f0; /* Um leve brilho verde no título */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #0f0; /* Label verde */
+}
+
+input[type="number"] {
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #0f0; /* Borda verde */
+    border-radius: 4px;
+    width: 80px;
+    text-align: center;
+    background-color: #222; /* Fundo escuro para o input */
+    color: #0f0; /* Texto do input verde */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0a0; /* Botão verde */
+    color: black; /* Texto do botão preto para contraste */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #0f0; /* Verde mais claro ao passar o mouse */
+    box-shadow: 0 0 10px #0f0; /* Brilho verde ao passar o mouse */
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #0f0; /* Resultado verde */
+    min-height: 1.2em;
+    text-shadow: 0 0 3px #0f0; /* Leve brilho no resultado */
+    position: relative; /* Garante que o resultado participe do contexto de empilhamento */
+    z-index: 11; /* Coloca o resultado acima do container (apenas para garantir) */
+}

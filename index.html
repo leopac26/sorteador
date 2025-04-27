@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Número Único - Matrix</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png" type="image/png">
+    
+
+    <meta name="theme-color" content="#2196f3">
+
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas> <!-- Adicionamos o canvas aqui -->
+
+    <div class="container">
+        <h1>Sorteador de Número Único</h1>
+
+        <label for="limiteMaximo">Sortear um número entre 1 e:</label>
+        <input type="number" id="limiteMaximo" min="1" value="100">
+
+        <button id="sortear">Sortear</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="matrix.js"></script> <!-- Vamos criar um novo arquivo para o script da matrix -->
+    
+
+</body>
+</html>
