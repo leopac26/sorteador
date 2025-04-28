@@ -1,9 +1,10 @@
 {
-  "name": "sorteador",
-  "short_name": "AppTop",
-  "start_url": "/",
+  "name": "Sorteador de Número Único - Matrix",
+  "short_name": "Sorteador",
+  "description": "Um sorteador de números aleatórios com um estilo Matrix",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#000000",
   "theme_color": "#2196f3",
   "icons": [
     {

@@ -14,8 +14,11 @@ document.getElementById('sortear').addEventListener('click', function() {
     resultadoDiv.textContent = 'Número sorteado: ' + numeroAleatorio;
 });
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js')
-      .then(() => console.log('Service Worker registrado com sucesso.'))
-      .catch(error => console.log('Erro ao registrar o Service Worker:', error));
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sorteador/service-worker.js')
+        .then(() => console.log('Service Worker registrado com sucesso.'))
+        .catch(error => console.log('Erro ao registrar o Service Worker:', error));
+    });
   }
+  
   
