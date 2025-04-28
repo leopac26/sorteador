@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icon-192.png" type="image/png">
-    
-
+    <link rel="apple-touch-icon" href="icon-192.png"> <!-- ícone para iOS -->
     <meta name="theme-color" content="#2196f3">
-
 </head>
 <body>
-    <canvas id="matrixCanvas"></canvas> <!-- Adicionamos o canvas aqui -->
+    <canvas id="matrixCanvas"></canvas>
 
     <div class="container">
         <h1>Sorteador de Número Único</h1>
@@ -27,8 +25,46 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="matrix.js"></script> <!-- Vamos criar um novo arquivo para o script da matrix -->
-    
+    <script src="matrix.js"></script>
 
+    <!-- Script para mostrar o botão de instalar -->
+    <script>
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+
+            const installButton = document.createElement('button');
+            installButton.innerText = '📲 Instalar App';
+            installButton.style.position = 'fixed';
+            installButton.style.bottom = '20px';
+            installButton.style.left = '20px';
+            installButton.style.zIndex = '1000';
+            installButton.style.padding = '10px 20px';
+            installButton.style.fontSize = '18px';
+            installButton.style.backgroundColor = '#2196f3';
+            installButton.style.color = '#fff';
+            installButton.style.border = 'none';
+            installButton.style.borderRadius = '8px';
+            installButton.style.cursor = 'pointer';
+            installButton.style.boxShadow = '0 4px 6px rgba(0,0,0,0.2)';
+
+            installButton.onclick = () => {
+                installButton.style.display = 'none';
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Usuário aceitou a instalação');
+                    } else {
+                        console.log('Usuário recusou a instalação');
+                    }
+                    deferredPrompt = null;
+                });
+            };
+
+            document.body.appendChild(installButton);
+        });
+    </script>
 </body>
 </html>
