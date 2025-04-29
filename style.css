@@ -72,12 +72,16 @@ button:hover {
 
 #resultado {
     margin-top: 20px;
-    font-size: 18px;
-    color: #0f0; /* Resultado verde */
+    font-size: 60px;
+    color: #07e75d; /* Resultado verde */
     min-height: 1.2em;
     text-shadow: 0 0 3px #0f0; /* Leve brilho no resultado */
     position: relative; /* Garante que o resultado participe do contexto de empilhamento */
     z-index: 11; /* Coloca o resultado acima do container (apenas para garantir) */
+    font-weight: bold;
+    text-align: center;
+
+    
 }
 
 .botoes {
